@@ -24,12 +24,17 @@ function App() {
     },
 ])
 
+  // Delete Task
+  const deleteTask = (id) => {
+    setTasks(tasks.filter((tasks) => tasks.id !== id))
+  }
+
   return (
     <div className="container">
-      <Header 
-        title = "React Refresher"
-        />
-        <Tasks tasks={tasks}/>
+      <Header/>
+      {tasks.length > 0 ? (
+        <Tasks tasks={tasks} onDelete={deleteTask}/>
+      ) : ("No Task To Show")}
     </div>
   );
 }
