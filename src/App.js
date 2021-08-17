@@ -1,9 +1,13 @@
 import Header from "./Components/Header";
+import Tasks from "./Components/Task";
 
 function App() {
   return (
     <div className="container">
-      <Header />
+      <Header 
+        title = "React Refresher"
+        />
+        <Tasks />
     </div>
   );
 }
